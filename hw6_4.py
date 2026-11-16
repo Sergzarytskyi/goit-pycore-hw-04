@@ -1,6 +1,7 @@
 def parse_input(user_input):
     if not user_input.strip():
-        return "Invalid command."
+        cmd = ""
+        return cmd, []
     cmd, *args = user_input.split()
     cmd = cmd.strip().lower()
     return cmd, *args
@@ -52,6 +53,8 @@ def main():
         if command in ["close", "exit"]:
             print("Good bye!")
             break
+        elif command == "":
+            print("Command is empty. Please try again. ")    
         elif command == "hello":
             print("How can I help you?")
         elif command == "add":
