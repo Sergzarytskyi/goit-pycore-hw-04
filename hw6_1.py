@@ -1,3 +1,6 @@
+from pathlib import Path
+
+
 def total_salary(path):
     salaries = []
 
@@ -19,5 +22,7 @@ def total_salary(path):
 
     return sum(salaries), sum(salaries) / len(salaries)
 
-total,average = total_salary("C:\\Users\\Unrea\\Desktop\\neoversity\\test_kod\\HW_Python\\hw6\\salary_file.txt")
+
+file_path = Path(__file__).parent / "salary_file.txt"
+total,average = total_salary(file_path)
 print(f"Загальна сума заробітної плати: {total}\nСередня заробітна плата: {average}")
